@@ -5,7 +5,7 @@ interface Props {
   jobID: number;
 }
 
-export default function Button(props: Props) {
+export default function JobDetailsButton(props: Props) {
   const router = useRouter();
   const jobID = props.jobID;
   function handleButtonClick() {
