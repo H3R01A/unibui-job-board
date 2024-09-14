@@ -1,7 +1,7 @@
 import { getJobDetails } from '@/actions/actions';
 import '../../../app/globals.css';
 import styles from './page.module.css';
-import NavLink from '@/components/nav-link';
+import JobButton from '@/components/job-button';
 
 interface PageProps {
   params: { jobID: number };
@@ -21,7 +21,7 @@ export default async function JobDetail(props: PageProps) {
         <p className="">{jobDetailData.Location}</p>
         <p className="">{jobDetailData['Job Description']}</p>
         <p className="">{jobDetailData.Requirements}</p>
-        <NavLink href={'/jobs'}>Back to Jobs</NavLink>
+        <JobButton />
       </div>
     </>
   );
