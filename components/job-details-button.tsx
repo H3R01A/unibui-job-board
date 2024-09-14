@@ -9,7 +9,7 @@ export default function JobDetailsButton(props: Props) {
   const router = useRouter();
   const jobID = props.jobID;
   function handleButtonClick() {
-    router.push(`/jobs/${jobID}`);
+  router.push(`/jobs/${jobID}`);
   }
 
   return <button onClick={handleButtonClick}>Click to Find More</button>;
