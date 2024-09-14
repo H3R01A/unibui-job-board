@@ -1,5 +1,5 @@
-import { getJobDetails } from '@/actions/actions';
 import '../../../app/globals.css';
+import { getJobDetails } from '@/actions/actions';
 import styles from './page.module.css';
 import JobButton from '@/components/job-button';
 
@@ -8,6 +8,7 @@ interface PageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
+//TODO: convert this component to use props for details instead of fetching details again.
 export default async function JobDetail(props: PageProps) {
   const jobID = props.params.jobID;
   const jobDetailData = await getJobDetails(jobID);
