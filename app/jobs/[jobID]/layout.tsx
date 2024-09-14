@@ -1,4 +1,3 @@
-import MainHeader from '@/components/main-header';
 
 export const metadata = {
   title: 'Job Posting',
@@ -7,15 +6,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className="">
-        <MainHeader />
-        {children}
-      </body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }
