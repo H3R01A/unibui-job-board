@@ -1,5 +1,5 @@
 import '../../app/globals.css';
-import styles from './page.module.css';
+//import styles from './page.module.css';
 import { getJobData } from '@/actions/actions';
 import { Job } from '../../utils/types';
 import JobDetailsButton from '@/components/job-details-button';
@@ -13,8 +13,8 @@ export default async function JobListingsPage() {
   }
 
   return (
-    <div className={styles.page}>
-      <h1>Choose Your Class</h1>
+    <div className="flex items-stretch">
+      <h1 className="text-3xl font-bold underline">Choose Your Class</h1>
       {jobData.map((job, index) => (
         <div key={index} className="">
           <h2 className="">{job['Job Title']}</h2>
