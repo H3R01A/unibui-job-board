@@ -6,7 +6,9 @@ export default function MainHeader() {
       <nav>
         <ul>
           <li>
-            <NavLink href={'/'}>Home</NavLink>
+            <div className="hover:text-orange-400 text-lg">
+              <NavLink href={'/'}>Home</NavLink>
+            </div>
           </li>
         </ul>
       </nav>
