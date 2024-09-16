@@ -5,8 +5,8 @@ export default function MainHeader() {
     <header id="main-header">
       <nav>
         <ul>
-          <li>
-            <div className="hover:text-orange-400 text-lg">
+          <li className="hover:text-orange-600 transition duration-300 ease-in-out">
+            <div className="text-lg">
               <NavLink href={'/'}>Home</NavLink>
             </div>
           </li>
