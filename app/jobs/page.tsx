@@ -2,6 +2,7 @@ import '../../app/globals.css';
 import { getJobData } from '@/actions/actions';
 import { Job } from '../../utils/types';
 import JobDetailsButton from '@/components/job-details-button';
+import Search from '@/components/search';
 
 export default async function JobListingsPage() {
   const jobData: Job[] | undefined = await getJobData();
@@ -13,6 +14,9 @@ export default async function JobListingsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Choose Your Class</h1>
+      <div className="py-5 flex flex-col items-center">
+        <Search placeholder="Enter Title or Company Name" />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobData.map((job, index) => (
           <div
