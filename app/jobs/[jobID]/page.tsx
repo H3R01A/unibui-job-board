@@ -15,7 +15,7 @@ export default async function JobDetail(props: PageProps) {
     <div className="min-h-screen bg-#0a0a0a py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
-          Choose Your Class
+          Class Details
         </h1>
         <div className="bg-gray-800 rounded-lg shadow-md p-6 flex flex-col items-center">
           <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
