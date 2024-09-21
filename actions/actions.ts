@@ -39,5 +39,7 @@ export async function getJobDetails(id: number) {
   const csvfilePath = path.join(process.cwd(), 'public', '/data/jobs.csv');
   const csvFile = await fs.readFile(csvfilePath, 'utf8');
   const parsedData = Papa.parse<RawJobData>(csvFile, { header: true });
-  return parsedData.data[id];
+
+  const jobData: Job = parsedData.data[id] as Job;
+  return jobData;
 }
