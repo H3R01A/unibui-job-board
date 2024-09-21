@@ -40,7 +40,10 @@ export default async function JobDetail(props: PageProps) {
           <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
             {jobDetailsData.Requirements}
           </p>
-          <JobButton />
+          <p className="text-gray-500 dark:text-gray-400 mb-4">
+              Job ID: {jobID}
+            </p>
+          <JobButton jobDetails={jobDetailsData} jobID = {jobID}/>
         </div>
       </div>
     </div>
