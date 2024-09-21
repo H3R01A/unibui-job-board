@@ -3,18 +3,27 @@ import 'server-only';
 import Papa from 'papaparse';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Job } from '../utils/types';
-
-// import xss from 'xss';
-//import { redirect } from 'next/navigation';
-//import { revalidatePath } from 'next/cache';
+import { Job, RawJobData } from '../utils/types';
 
 export async function getJobData(): Promise<Job[] | undefined> {
   try {
     const csvfilePath = path.join(process.cwd(), 'public', '/data/jobs.csv');
     const csvFile = await fs.readFile(csvfilePath, 'utf8');
-    const parsedData = Papa.parse<Job>(csvFile, { header: true });
-    return parsedData.data;
+    const parsedData = Papa.parse<RawJobData>(csvFile, {
+      header: true,
+      skipEmptyLines: true,
+    });
+
+    if (parsedData.errors.length > 0) {
+      throw new Error(`CSV parsing error: ${parsedData.errors[0].message}`);
+    }
+
+    const jobData: Job[] = parsedData.data.map((job, index) => ({
+      ...job,
+      jobID: index,
+    }));
+
+    return jobData;
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error(
@@ -29,6 +38,6 @@ export async function getJobData(): Promise<Job[] | undefined> {
 export async function getJobDetails(id: number) {
   const csvfilePath = path.join(process.cwd(), 'public', '/data/jobs.csv');
   const csvFile = await fs.readFile(csvfilePath, 'utf8');
-  const parsedData = Papa.parse<Job>(csvFile, { header: true });
+  const parsedData = Papa.parse<RawJobData>(csvFile, { header: true });
   return parsedData.data[id];
 }
