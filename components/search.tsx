@@ -20,7 +20,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   return (
     <div>
-      <label htmlFor="search">Search </label>
+      <label htmlFor="search">Search: </label>
       <input
         placeholder={placeholder}
         onChange={(e) => {
