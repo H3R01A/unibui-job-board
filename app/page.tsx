@@ -19,15 +19,17 @@ export default function Home() {
       <h1 className="text-3xl font-bold underline">Welcome to Job Board 2.0</h1>
       <div className="border-orange-500 hover:text-orange-600 transition duration-300 ease-in-out">
         <NavLink href={'/jobs'}>
-          Click to Find Where Your Next Journey Begins
+          Click to find your next adventure
         </NavLink>
       </div>
       <h2 className="text-2xl font-bold underline">Saved Jobs</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div>
         {favrotieJobs === null ? (
           'You have no saved jobs'
         ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Jobs jobData={favrotieJobs} />
+          </div>
         )}
       </div>
     </div>
