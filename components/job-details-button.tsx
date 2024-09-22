@@ -15,7 +15,7 @@ export default function JobDetailsButton(props: Props) {
   return (
     <>
       <div className="border-solid border-2 px-2 border-orange-500 rounded-md hover:bg-orange-600 text-center transition duration-300 ease-in-out">
-        <button onClick={handleButtonClick}>Click to Find More</button>
+        <button onClick={handleButtonClick}>Click to find out more</button>
       </div>
     </>
   );
