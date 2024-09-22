@@ -25,7 +25,7 @@ export default async function JobListingsPage(props: JobListingsPageProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Choose Your Class</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Choose Your Next Adventure</h1>
       <div className="py-5 flex flex-col items-center">
         <Search placeholder="Enter Title or Company Name" />
       </div>
